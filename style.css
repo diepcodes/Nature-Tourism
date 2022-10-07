@@ -1,0 +1,820 @@
+@font-face {
+    font-family: avenir;
+    src:url(avenir.ff/AvenirLTStd-Black)
+        url(avenir.ff/AvenirLTStd-Book)
+        url(avenir.ff/AvenirLTStd-Roman)
+}
+
+/*Comment Style*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Avenir", sans-serif;
+    list-style-type: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --primary-color: #10327b;
+    --white-color: #fff;
+    --black-color: #222222;
+    --grey-color: rgb(203, 228, 255);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: var(--white-color);
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+/*End of Common Style*/
+
+/*Navbar*/
+.menu {
+    display: none;
+}
+
+.navbar {
+    width: 60%;
+    height: 5rem;
+    position: absolute;
+    top: 2.5rem;
+    right: 1rem;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    transition: top .4s;
+}
+
+.navbar-link {
+    color: var(--primary-color);
+    margin: 0 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.navbar-link span {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    margin-top: .4rem;
+    transition: all .2s;
+}
+
+.navbar-link i {
+    font-size: 2rem;
+    font-weight: 550;
+    transition: all .2s;
+}
+
+.navbar-link span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+/*End of Navbar*/
+
+/*Header*/
+.header {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 100rem;
+}
+
+.header-text {
+    text-align: center;
+    color: var(--white-color);
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    text-shadow: 0 .1rem .3rem var(--grey-color);
+    position: absolute;
+}
+
+.heading {
+    font-size: 6.5rem;
+    font-weight: 600;
+    line-height: 12rem;
+}
+
+.header-paragraph {
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+.video-container {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+    url(images/bg-pic.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+}
+
+.logo h1 {
+    display: flex;
+}
+
+.logo h1 span {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--primary-color);
+    background-color: var(--white-color);
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: .5rem;
+    border-radius: 50%;
+}
+
+.logo h1 span:nth-child(1) {
+    animation: drop-letters;
+    animation-duration: 5s;
+    animation-delay: .1s;
+    animation-iteration-count: infinite;
+} /*OR FOR SHORT: animation: drop-letters 5s .1s infinite;*/
+
+.logo h1 span:nth-child(2) {
+    animation: drop-letters 5s .2s infinite;
+}
+
+.logo h1 span:nth-child(3) {
+    animation: drop-letters 5s .3s infinite;
+}
+
+.logo h1 span:nth-child(4) {
+    animation: drop-letters 5s .4s infinite;
+}
+
+.logo h1 span:nth-child(5) {
+    animation: drop-letters 5s .5s infinite;
+}
+
+.logo h1 span:nth-child(6) {
+    animation: drop-letters 5s .6s infinite;
+}
+
+@keyframes drop-letters {
+    0% {
+        transform: translateY(0);
+    }
+
+    10% {
+        transform: translateY(0);
+    }
+
+    15% {
+        transform: translateY(-100%);
+    }
+
+    20% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+/*End of Header*/
+
+/*Discoveries*/
+.discoveries {
+    margin: 2rem;
+}
+
+.discovery-heading {
+    font-size: 2.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: var(--primary-color);
+    margin-top: 7rem;
+    margin-left: 1rem;
+}
+
+.scrollsnap {
+    display: none;
+}
+
+.scrollsnap-btn {
+    display: none;
+}
+
+.slider {
+    margin-top: 1.5rem;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    place-items: center;
+    background: var(--white-color);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.slider .card {
+    flex: 1;
+    margin: 0 1rem;
+    background: var(--white-color);
+    border-radius: .8rem;
+}
+
+.slider .card .img {
+    height: 20rem;
+    width: 100%;
+    border-radius: .8rem;
+}
+
+.slider .card .img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: .8rem;
+}
+
+.slider .card .content {
+    padding: 1rem 0;
+}
+
+.card .content .title {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.card .content .sub-title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    line-height: 20px;
+}
+
+.card .content p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 1rem 0;
+}
+
+.card .content .btn {
+    display: block;
+    text-align: right;
+    margin: 1rem;
+}
+
+.card .content .btn button {
+    background: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    outline: none;
+    font-size: 1.4rem;
+    padding: .8rem 1rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.card .content .btn button:hover{
+    transform: scale(0.9);
+}
+/*End of Discoveries*/
+
+/*Travel Articles*/
+.travel-articles {
+    margin: 2rem;
+}
+
+.travel-articles-heading {
+    font-size: 2.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: var(--primary-color);
+    margin-top: 7rem;
+    margin-left: 1rem;
+}
+
+.article-items-wrapper {
+    width: 100%;
+    padding: 2rem 10rem;
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.article-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-group > * {
+    flex: 1;
+}
+
+.article-card {
+    width: 40rem;
+    border-radius: .8rem;
+    box-shadow: 0 1rem 4rem rgba(0, 0. 0. 0.4);
+    margin: 1rem;
+}
+
+.article-img {
+    width: 100%;
+    border-radius: .8rem;
+    object-fit: cover;
+}
+
+.article-text h2 {
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.article-text h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.8rem;
+    color: var(--primary-color);
+}
+/*End of Travel Articles*/
+
+/*Map*/
+.map-showcase {
+    margin: 11rem 11rem 7rem 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-wrapper, .mapouter, .gmap_canvas {
+    border-radius: .8rem;
+}
+
+.map-text {
+    margin-bottom: 0 2rem 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.map-heading {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: var(--primary-color);
+    margin: 3rem 10rem;
+    text-align: left;
+}
+
+.map-paragraph {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: .1rem;
+    color: var(--black-color);
+    margin: 3rem 10rem;
+    text-align: left;
+}
+
+.map-btn {
+    background: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    outline: none;
+    font-size: 1.7rem;
+    padding: 1.2rem 2.4rem;
+    margin-top: 3rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+/*End of Map*/
+
+/*Footer*/
+.footer {
+    width: 100%;
+    height: 24rem;
+    background-color: var(--grey-color);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer-heading {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    padding: 1rem 0;
+}
+
+.footer-content-wrapper {
+    padding: .5rem 0;
+}
+
+.footer-content, .footer-copy {
+    font-size: 1.5rem;
+    font-weight: 550;
+    color: var(--black-color);
+    transition: all .2s;
+}
+
+.footer-content:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.social-media i {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--black-color);
+    padding: .5rem 1rem 0 0;
+}
+/*End of Footer*/
+
+@media (max-width: 1500px) {
+    .heading {
+        font-size: 5rem;
+        font-weight: 550;
+        line-height: 10rem;
+    }
+    
+    .header-paragraph {
+        font-size: 2rem;
+        font-weight: 350;
+    }
+}
+
+@media (max-width: 1300px) {
+    .navbar {
+        width: 60%;
+    }
+
+    .navbar-link {
+        margin: 0 3rem;
+    }
+
+    .navbar-link span {
+        font-size: 1.7rem;
+        font-weight: 550;
+    }
+
+    .heading {
+        font-size: 4rem;
+        line-height: 8rem;
+    }
+    
+    .header-paragraph {
+        font-size: 1.6rem;
+        font-weight: 300;
+    }
+
+    .card .content .title {
+        font-size: 2.2rem;
+        font-weight: 600;
+    }
+    
+    .card .content .sub-title {
+       font-size: 1.5rem;
+       font-weight: 550;
+    }
+    
+    .card .content p {
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+    
+    .card .content .btn button {
+        font-size: 1.2rem;
+        padding: .6rem .8rem;
+    }
+
+    .article-items-wrapper {
+        gap: 1.5rem;
+    }
+
+    .map-showcase {
+        margin: 11rem 7rem 7rem 5rem;
+    }
+
+    .map-heading {
+        font-size: 2.2rem;
+        font-weight: 600;
+        margin: 3rem 6rem;
+    }
+    
+    .map-paragraph {
+        font-size: 1.7rem;
+        font-weight: 500;
+        margin: 3rem 6rem;
+    }
+    
+    .map-btn {
+        font-size: 1.5rem;
+        padding: 1rem 2.2rem;
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 1100px) {
+    .menu {
+        display: block;
+        width: 3rem;
+        height: 2.1rem;
+        position: absolute;
+        top: 3rem;
+        right: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 150;
+    }
+
+    .menu-line {
+        width: 100%;
+        height: .3rem;
+        border-radius: .5rem;
+        background-color: var(--white-color);
+        transition: all .5s;
+    }
+
+    .change .menu-line-1 {
+        transform: rotate(40deg) translate(.14rem, 1rem);
+        background-color: var(--primary-color);
+    }
+
+    .change .menu-line-2 {
+        opacity: 0;
+        background-color: var(--primary-color);
+    }
+
+    .change .menu-line-3 {
+        transform: rotate(-40deg) translate(.14rem, -1rem);
+        background-color: var(--primary-color);
+    }
+
+    .navbar {
+        position: absolute;
+        top: 0;
+        right: -40rem;
+        flex-direction: column;
+        width: calc(100vw*.3);
+        height: 100vh;
+        background-color: var(--grey-color);
+        opacity: .9;
+        justify-content: start;
+        padding: 2rem;
+        border-radius: .5rem 0 0 0;
+        transition: right .5s;
+    }
+
+    .navbar-link {
+        margin: 1.2rem;
+        text-align: left;
+    }
+
+    .change .navbar {
+        right: 0;
+    }
+
+    .article-items-wrapper {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .map-showcase {
+        flex-direction: column;
+        margin: 7rem;
+    }
+
+    .map-text {
+        margin: 1rem;
+        order: 1;
+    }
+
+    .map-heading, .map-paragraph {
+        text-align: center;
+    }
+
+    .map-wrapper {
+        padding: 1rem 5rem;
+    }
+    
+    .footer-copy-text {
+        margin: 0 0 2rem 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .heading {
+        font-size: 3rem;
+        font-weight: 520;
+        line-height: 6rem;
+    }
+
+    .header-paragraph {
+        font-size: 1.2rem;
+        font-weight: 100;
+        text-shadow: none;
+    }
+
+    .map-showcase {
+        margin: 4rem;
+    }
+
+    .map-wrapper {
+        padding: 1rem 10rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        right: -100rem;
+        width: 100vw;
+    }
+
+    .navbar-link {
+        margin: 2rem;
+        text-align: center;
+    }
+
+    .bg-video {
+        visibility: hidden;
+    }
+
+    .heading {
+        font-size: 2.5rem;
+    }
+
+    .header-paragraph {
+        font-size: 1rem;
+    }
+
+    .discovery-heading, .travel-articles-heading {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .slider {
+        visibility: hidden;
+        height: 0;
+    }
+
+    .scrollsnap-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .scrollsnap {
+        display: flex;
+        overflow: auto;
+        justify-content: center;
+    
+        scroll-snap-type: x mandatory;
+    
+        padding: 1rem;
+        gap: 2rem;
+        scroll-padding: 1rem;
+    }
+    
+    .scrollsnap img {
+        width: 50rem;
+        height: calc(50rem*2/3);
+        object-fit: cover;
+    }
+    
+    .scrollsnap > .item {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+    }
+
+    .scrollsnap-btn {
+        display: block;
+        background: var(--primary-color);
+        color: var(--white-color);
+        border: none;
+        outline: none;
+        text-align: center;
+        font-size: 1.7rem;
+        padding: 1.2rem 2.4rem;
+        margin-top: 3rem;
+        border-radius: .5rem;
+        
+        cursor: pointer;
+    }
+
+    .map-showcase {
+        margin: 2rem;
+    }
+
+    .map-heading {
+        font-size: 2rem;
+    }
+
+    .map-paragraph {
+        font-size: 1.6rem;
+    }
+
+    .footer {
+        flex-direction: column;
+        height: auto;
+        padding: 2rem 0;
+    }
+
+    .footer-heading {
+        margin-top: 2rem;
+        text-align: center;
+    }
+   
+    .footer-content-wrapper {
+        text-align: center;
+        padding: 1.2rem 0;
+    }
+
+    .social-media {
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 60%;
+    }
+
+    .logo {
+        visibility: hidden;
+    }
+
+    .header-text {
+        text-align: left;
+        left: 3rem;
+        text-shadow: none;
+        max-width: 35rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .article-card {
+        width: 35rem;
+    }
+
+    .map-showcase {
+        margin: 1rem;
+    }
+
+    .map-heading {
+        font-size: 2rem;
+    }
+
+    .map-paragraph {
+        font-size: 1.5rem;
+    }
+
+    .map-btn {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .header-text {
+        top: 4.5rem;
+        max-width: 15rem;
+    }
+
+    .heading {
+        font-size: 3rem;
+        font-weight: 500;
+        line-height: 3.4rem;
+    }
+
+    .header-paragraph {
+        visibility: hidden;
+    }
+
+    .article-card {
+        width: 25rem;
+    } 
+}
